@@ -20,10 +20,10 @@ public class Filial {
     private Long id;
 
     @NotBlank
-    @Length(max = 254, message = "Full filial name too long (more then 254 chars)")
+    @Length(max = 254, message = "{filial.fullname.length.tolong}")
     private String fullName;
 
-    @Length(max = 100, message = "Filial name too long (more then 100 chars)")
+    @Length(max = 100, message = "{filial.shortname.length.tolong}")
     private String shortName;
 
 }

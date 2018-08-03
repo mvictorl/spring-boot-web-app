@@ -17,10 +17,10 @@ public class Division {
     private Long id;
 
     @NotBlank
-    @Length(max = 254, message = "Full division name too long (more then 254 chars)")
+    @Length(max = 254, message = "{division.fullname.length.tolong}")
     private String fullName;
 
-    @Length(max = 100, message = "Division name too long (more then 100 chars)")
+    @Length(max = 100, message = "{division.shortname.length.tolong}Division name too long (more then 100 chars)")
     private String shortName;
 
     @ManyToOne(fetch = FetchType.EAGER)

@@ -17,20 +17,20 @@ public class Employee {
     private Long id;
 
     @NotBlank
-    @Length(max = 75, message = "Last name too long (more then 75 chars)")
+    @Length(max = 75, message = "{employee.lastname.length.tolong}")
     private String lastName;
 
     @NotBlank
-    @Length(max = 50, message = "First name too long (more then 50 chars)")
+    @Length(max = 50, message = "{employee.firstname.length.tolong}")
     private String firstName;
 
-    @Length(max = 50, message = "Middle name too long (more then 50 chars)")
+    @Length(max = 50, message = "{employee.middlename.length.tolong}")
     private String middleName;
 
     @Transient
     private String shortName;
 
-    @Length(max = 100, message = "Position too long (more then 100 chars)")
+    @Length(max = 100, message = "{employee.position.length.tolong}")
     private String position;
 
     public String getShortName() {
