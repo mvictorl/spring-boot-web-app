@@ -20,9 +20,10 @@ public class Division {
     @Length(max = 254, message = "{division.fullname.length.tolong}")
     private String fullName;
 
-    @Length(max = 100, message = "{division.shortname.length.tolong}Division name too long (more then 100 chars)")
+    @Length(max = 100, message = "{division.shortname.length.tolong}")
     private String shortName;
 
+    @NotBlank
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "parent_filial_id")
     private Filial parentFilial;

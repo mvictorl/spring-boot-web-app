@@ -1,5 +1,6 @@
 <#include "security_part.ftl">
 <#import "login_form.ftl" as l>
+<#import "/spring.ftl" as spring>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">Sweater</a>
@@ -13,7 +14,7 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/main">Messages</a>
+                <a class="nav-link" href="/filial">Filials</a>
             </li>
             <#--<#if isAdmin>
             <li class="nav-item">
@@ -31,7 +32,7 @@
         <#if user??>
             <@l.logout />
         <#else>
-            <a class="btn btn-primary" href="/login">Login</a>
+            <a class="btn btn-primary" href="/login"><@spring.message "label.user_login" /></a>
         </#if>
     </div>
 </nav>
