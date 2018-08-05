@@ -4,10 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
@@ -25,5 +22,11 @@ public class Filial {
 
     @Length(max = 100, message = "{filial.shortname.length.tolong}")
     private String shortName;
+
+/*
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "chif_employee_id")
+    private Employee filialChif;
+*/
 
 }

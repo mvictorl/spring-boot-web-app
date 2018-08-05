@@ -27,13 +27,18 @@ public class Employee {
     @Length(max = 50, message = "{employee.middlename.length.tolong}")
     private String middleName;
 
-    @Transient
-    private String shortName;
-
     @Length(max = 100, message = "{employee.position.length.tolong}")
     private String position;
 
+    @NotBlank
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "parent_division_id")
+    private Division parentDivision;
+
+    @Transient
+    private String shortName;
+
     public String getShortName() {
-        return lastName + ' ' + firstName.substring(0, 1) + '.' + middleName.substring(0, 1);
+        return lastName + ' ' + firstName.substring(0, 1) + '.' + middleName.substring(0, 1) + '.';
     }
 }

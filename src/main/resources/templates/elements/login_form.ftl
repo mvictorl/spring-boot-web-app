@@ -7,6 +7,7 @@
                 <input type="text" name="username"
                        value="<#if user??>${user.username}</#if>"
                        class="form-control ${(usernameError??)?string('is-invalid', '')}"
+                       autofocus
                        placeholder="<@spring.message "label.user_name" />"/>
             <#if usernameError??>
                 <div class="invalid-feedback">

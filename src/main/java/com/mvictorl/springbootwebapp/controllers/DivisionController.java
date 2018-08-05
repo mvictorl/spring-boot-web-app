@@ -2,6 +2,7 @@ package com.mvictorl.springbootwebapp.controllers;
 
 
 import com.mvictorl.springbootwebapp.domain.Filial;
+import com.mvictorl.springbootwebapp.service.DivisionService;
 import com.mvictorl.springbootwebapp.service.FilialService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,22 +12,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/filial")
-public class FilialController {
+@RequestMapping(value = "/division")
+public class DivisionController {
 
     @Autowired
     private FilialService filialService;
 
+    @Autowired
+    private DivisionService divisionService;
+
     @GetMapping
     public String filialList(Model model) {
         model.addAttribute("filials", filialService.findAll());
-        return "filial";
+        return "division";
     }
 
-    @GetMapping("/{filial}")
+    @GetMapping("/filial/{filial}")
     public String getFilial(@PathVariable Filial filial, Model model) {
         model.addAttribute("filials", filialService.findAll());
         model.addAttribute("filial", filial);
-        return "filial";
+        model.addAttribute("divisions", divisionService.findAllByParentFilial(filial));
+        return "division";
     }
 }

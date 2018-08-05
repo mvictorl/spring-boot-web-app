@@ -16,11 +16,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="/filial">Filials</a>
             </li>
-            <#--<#if isAdmin>
+            <li class="nav-item">
+                <a class="nav-link" href="/division">Divisions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/employee">Employees</a>
+            </li>
+            <#if isAdmin>
             <li class="nav-item">
                 <a class="nav-link" href="/user">User list</a>
             </li>
-            </#if>-->
+            </#if>
             <#if user??>
             <li class="nav-item">
                 <a class="nav-link" href="/user/profile">Profile</a>
